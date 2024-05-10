@@ -9,18 +9,18 @@ import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
-      <div>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" Component={Landing} />
-            <Route path="/home" Component={Home} />
-            <Route path="/details:id" Component={Details} />
-            <Route path="/formu" Component={Formu} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-  )
+    <div className="div_a">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/details:id" element={<Details />} />
+          <Route path="/formu" element={<Formu />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
