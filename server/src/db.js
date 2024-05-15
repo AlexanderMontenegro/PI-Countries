@@ -1,16 +1,25 @@
+
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
 
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT
 } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
+const DB_DEPLOY = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+
+
+
+const sequelize = new Sequelize(DB_DEPLOY, {
   logging: false, 
   native: false, 
+  dialectOptions: {
+    acquireTimeout: 9000
+  } 
 });
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
@@ -28,12 +37,17 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Country } = sequelize.models;
+const { Country, Activity } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+Country.belongsToMany(Activity, {through: "Country_Activity"});
+Activity.belongsToMany(Country, {through: "Country_Activity"});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
 };
+
+
+

@@ -1,24 +1,23 @@
-import { BrowserRouter, Routes, Route, Form } from "react-router-dom";
-
+import { Routes, Route, useLocation} from "react-router-dom";
 import "./App.css";
-import Landing from "./Views/Landing/Landing";
-import Details from "./Views/Details/Details";
-import Home from "./Views/Home/Home";
-import Formu from "./Views/Form/Formu";
-import Navbar from "./Components/Navbar/Navbar";
+import Landing from "./Components/Landing/Landing";
+import Detail from "./Components/Detail/Detail";
+import Home from "./Components/Home/Home";
+import Form from "./Components/Form/Form";
+import Nav from "./Components/Nav/Nav";
 
 function App() {
   return (
-    <div className="div_a">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/details:id" element={<Details />} />
-          <Route path="/formu" element={<Formu />} />
-        </Routes>
-      </BrowserRouter>
+    <div className="App">
+      <div className='shadow'>
+      { location.pathname !== '/' && location.pathname !== '/home' ? <Nav/>: null }
+      <Routes>
+         <Route path='/' element={<Landing/>}/>  
+         <Route path='/home' element={<Home/>}/>
+         <Route path='/detail/:id' element={<Detail/>}/>
+         <Route path='/form' element={<Form/>}/>
+      </Routes>
+      </div>
     </div>
   );
 }
