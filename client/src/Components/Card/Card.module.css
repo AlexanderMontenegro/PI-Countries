@@ -18,7 +18,7 @@
   .divTop {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra los elementos verticalmente */
+    align-items: center; 
     height: 10vh;
     padding: 0;
   }
@@ -26,9 +26,9 @@
   .divTitles {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra los elementos horizontalmente */
-    text-align: center; /* Centra el texto horizontalmente */
-    margin-top: 4vh; /* Ajusta el valor según tus necesidades */
+    align-items: center;
+    text-align: center; 
+    margin-top: 4vh; 
     padding: 2%;
   }
   

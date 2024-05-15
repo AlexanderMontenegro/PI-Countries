@@ -43,13 +43,13 @@ export default function SearchBar(props) {
       <button className={style.countries} onClick={() => { reload() }}>Countries PI</button>
       <input className={style.search} type='search' placeholder=' Search Country...' value={name} onChange={(event) => handleChange(event)} />
       <button className={style.buttonsearch} type='submit' disabled={name === ''} onClick={(event) => handleSubmit(event)}>Search</button>
-      <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)} />{/*Sonido*/}
+      <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)} />
       <button className={style.buttonsearchh} type='submit' onClick={(event) => props.handleFilter(event)}>Reset Search</button>
-      <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)} />{/*Sonido*/}
+      <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)} />
       <NavLink className={style.select} to="/">Exit</NavLink>
       <NavLink className={style.select} to="/form">Create Activity</NavLink>
       <a
-        href="https://www.linkedin.com/in/disof%C3%ADadubrowsky/"
+        href=""
         target="_blank"
         rel="noreferrer"
         className={style.alink}
@@ -57,7 +57,7 @@ export default function SearchBar(props) {
         <img src={linkedin} alt="linkedin" className={style.img} />
       </a>
       <a
-        href="https://github.com/SofiDubrowsky"
+        href=""
         target="_blank"
         rel="noreferrer"
         className={style.alink}
