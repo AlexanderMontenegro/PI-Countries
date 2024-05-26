@@ -113,7 +113,7 @@ const Home = () => {
                 <option value="All">All Activities</option>
                 {allActivities && allActivities.map((activity) => {
                   return (
-                    <option value={activity.name}>{activity.name}</option>
+                    <option key={activity.id} value={activity.name}>{activity.name}</option>
                   )
                 })}
               </select>
@@ -129,7 +129,7 @@ const Home = () => {
             <h1 className={style.title}>Order By</h1>
             <h3 className={style.subtitle}>Name/Population</h3>
             <select className={style.select} onChange={handleOrderByName} value={orderBy}>
-              <option value="" disabled selected>Order by...</option>
+              <option value="" disabled >Order by...</option>
               <option value='ascName'>Names A - Z</option>
               <option value='descName'>Names Z - A</option>
               <option value='ascPopulation'>Population Low-High</option>
