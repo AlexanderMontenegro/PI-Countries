@@ -1,6 +1,6 @@
 const { Router } = require("express");
-const postActivity = require("../controllers/deleteActivity")
-const deleteActivity = require("../controllers/postActivity")
+const postActivity = require("../controllers/postActivity")
+const deleteActivity = require("../controllers/deleteActivity")
 const { Activity } = require("../db");
 
 const router = Router();

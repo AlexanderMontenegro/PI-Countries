@@ -1,6 +1,6 @@
 const server = require("./src/server");
 const { conn } = require("./src/db");
-const PORT = 3002;
+const PORT = 3001;
 
 conn.sync({ force: true }).then(() => {
 

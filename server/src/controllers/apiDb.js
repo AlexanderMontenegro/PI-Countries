@@ -23,7 +23,7 @@ const axios = require("axios");
     }
  };
 
- const apiDb = async () => {
+ const infoDB = async () => {
     try{
         const dataBase = await country.findAll();
 
@@ -38,5 +38,5 @@ const axios = require("axios");
     }
  };
 
- module.exports = apiData;
+ module.exports =infoDB;
 

@@ -1,7 +1,7 @@
 import { GET_ACTIVITIES, DELETE_ACTIVITIES, GET_COUNTRIES, GET_COUNTRY_DETAIL, CREATE_ACTIVITY,SEARCH_COUNTRY,FILTER_COUNTRY, ORDER_BY_NAME,} from "../Actions/actions-type";
 
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3002';
+axios.defaults.baseURL = 'http://localhost:3001';
 
 export const getCountries = () => {
     return async (dispatch) => {
