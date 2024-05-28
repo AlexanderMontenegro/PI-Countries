@@ -1,7 +1,7 @@
 import style from "./Landing.module.css"
 import linkedin from '../img/linkedin.png'
 import github from '../img/github.png'
-import rosadelosvientos from "../img/github.png"
+import rosadelosvientos from "../img/Rosadelosvientos2.png"
 import { NavLink } from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ const Landing = () => {
       <div className={style.shadow}>
         <div className={style.topLeft} >
           <a
-            href=""
+            href="https://www.linkedin.com/in/alexander-montenegro/"
             target="_blank"
             rel="noreferrer"
             className={style.alink}
@@ -20,7 +20,7 @@ const Landing = () => {
             <img src={linkedin} alt="linkedin" className={style.img} />
           </a>
           <a
-            href=""
+            href="https://github.com/AlexanderMontenegro"
             target="_blank"
             rel="noreferrer"
             className={style.alink}
@@ -31,12 +31,10 @@ const Landing = () => {
 
         <div className={style.text}>
 
-          <div className={style.textsmall}>
-            <h5>Henry PI</h5>
-          </div>
+       
 
           <div className={style.textBig}>
-            <h1>Countries App Proyect</h1>
+            <h1>COUNTRIES</h1>
           </div>
 
           <div className={style.imagen}>

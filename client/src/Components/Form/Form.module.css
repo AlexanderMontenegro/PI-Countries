@@ -33,11 +33,10 @@
     margin-top: 1.3vh;
     margin-bottom: 2vh;
     text-transform: uppercase;
-    text-decoration: underline;
     font-size: 6vh;
     font-family:"Consolas";
     font-weight: bold;
-    color: white;
+    color: rgb(248, 7, 7);
   }
   
   .formField {
@@ -45,6 +44,7 @@
     text-align: center;
     height: 11.5vh;
     font-family:"Consolas";
+    color: rgba(255, 0, 0, 0.63);
   }
   
   .formInput {

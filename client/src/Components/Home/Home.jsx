@@ -91,26 +91,26 @@ const Home = () => {
         <div className={style.costado}>
  
           <div className={style.filterContainer}>
-            <h1 className={style.title}>Filters</h1>
+            <h1 className={style.title}>Filtros</h1>
             <div>
-              <h3 className={style.subtitle}>By Continent</h3>
+              <h3 className={style.subtitle}>Continentes</h3>
               <select className={style.select} onChange={handleFilterContinent}>
-                <option value='All'>All Continents</option>
+                <option value='All'>Todos los continentes</option>
                 <option value='Africa'>Africa</option>
                 <option value='Antarctica'>Antartica</option>
                 <option value='Asia'>Asia</option>
                 <option value='Europe'>Europe</option>
-                <option value='North America'>North America</option>
+                <option value='Norte America'>Norte America</option>
                 <option value='Oceania'>Oceania</option>
-                <option value='South America'>South America</option>
+                <option value='Sur America'>Sur America</option>
               </select>
             </div>
 
 
             <div>
-              <h3 className={style.subtitle}>By Activity</h3>
+              <h3 className={style.subtitle}>Actividades</h3>
               <select className={style.select} onChange={handleFilterActivity}>
-                <option value="All">All Activities</option>
+                <option value="All">Todas las actividades</option>
                 {allActivities && allActivities.map((activity) => {
                   return (
                     <option key={activity.id} value={activity.name}>{activity.name}</option>
@@ -119,25 +119,25 @@ const Home = () => {
               </select>
             </div>
 
-            <button className={style.reload} type="submit" onClick={handleFilter}>Apply</button>
+            <button className={style.reload} type="submit" onClick={handleFilter}>Aplicar</button>
             <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)} /> 
           </div>
 
      
 
           <div className={style.orderContainer}>
-            <h1 className={style.title}>Order By</h1>
-            <h3 className={style.subtitle}>Name/Population</h3>
+            <h1 className={style.title}>Ordenar</h1>
+            <h3 className={style.subtitle}>Nombre/Popularidad</h3>
             <select className={style.select} onChange={handleOrderByName} value={orderBy}>
-              <option value="" disabled >Order by...</option>
-              <option value='ascName'>Names A - Z</option>
-              <option value='descName'>Names Z - A</option>
-              <option value='ascPopulation'>Population Low-High</option>
-              <option value='descPopulation'>Population High-Low</option>
+              <option value="" disabled >Ordenar por...</option>
+              <option value='ascName'>Nombres A - Z</option>
+              <option value='descName'>Nombres Z - A</option>
+              <option value='ascPopulation'>Popularidad Bajo-Alto</option>
+              <option value='descPopulation'>Popularidad Alto-Bajo</option>
             </select>
           </div>
 
-          <button className={style.reload} onClick={() => { reload() }}>Re-load</button>
+          <button className={style.reload} onClick={() => { reload() }}>Recargar</button>
         </div>
 
         <div className={style.container}>
@@ -153,7 +153,7 @@ const Home = () => {
                 />
               )
             })
-            : (<p className={style.mensaje}>Country not Found</p>)
+            : (<p className={style.mensaje}>No Se Encuentra ...</p>)
           }
           <div className={style.espacio}>  </div>
           <div className={style.pag}>

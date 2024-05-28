@@ -1,3 +1,5 @@
+/* 
+
 const { Activity, Country } = require("../db");
 
 const deleteActivity = async (name) => {
@@ -18,6 +20,20 @@ const deleteActivity = async (name) => {
   } catch (error) {
     console.log('Error al eliminar  una  actividad', error);
   }
+};
+
+module.exports = deleteActivity;
+
+*/
+
+
+const { Activity } = require('../db');
+
+const deleteActivity = async (name) => {
+  const activity = await Activity.findOne({ where: { name } });
+  if (!activity) return false;
+  await activity.destroy();
+  return true;
 };
 
 module.exports = deleteActivity;

@@ -16,28 +16,29 @@ router.post('/', async (req, res) => {
 });
 
 
-router.get("/", async (req, res) => {
-    try {
-        const DataActivities = await Activity.findAll(); 
-        res.status(200).json(DataActivities);
-    } catch (error) {
-        return res.status(400).send(error);
-    }
-})
+
+router.get('/', async (req, res) => {
+  try {
+    const activities = await Activity.findAll();
+    res.status(200).json(activities);
+  } catch (error) {
+    return res.status(400).send(error.message);
+  }
+});
 
 
 
-router.delete("/", async (req, res) => {
+  router.delete('/', async (req, res) => {
     const { name } = req.query;
     try {
       const isDeleted = await deleteActivity(name);
       if (isDeleted) {
-        return res.status(200).json({ message: 'Actividad eliminada' });
+        return res.status(200).json({ message: 'Activity deleted' });
       } else {
-        return res.status(404).json({ message: 'Actividad no encontrada' });
+        return res.status(404).json({ message: 'Activity not found' });
       }
     } catch (error) {
-      return res.status(500).json({ message: 'Error al eliminar la actividad' });
+      return res.status(500).json({ message: 'Error deleting activity' });
     }
   });
     

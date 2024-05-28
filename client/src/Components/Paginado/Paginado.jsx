@@ -16,9 +16,9 @@ const Paginado = ({ currentPage, totalPages, onChangePage }) => {
 
   return (
     <div className={style.text}>
-      <button className={style.select} onClick={handlePreviousPage} disabled={currentPage === 1}>Prev</button>
-      <span>Page {currentPage} of {totalPages}</span>
-      <button className={style.select} onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+      <button className={style.select} onClick={handlePreviousPage} disabled={currentPage === 1}>Previo</button>
+      <span>Pagina {currentPage} al {totalPages}</span>
+      <button className={style.select} onClick={handleNextPage} disabled={currentPage === totalPages}>Siguiente</button>
     </div>
   );
 };

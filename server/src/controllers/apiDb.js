@@ -4,7 +4,7 @@ const axios = require("axios");
 
  const apiData = async () => {
     try{
-        const response = await axios.get("http://localhost:5000/countries");
+        const response = await axios.get("http://localhost:5000/");
         const countries= await response.data.map(country =>{
             return{
                 id: country.cca3,

@@ -9,7 +9,7 @@ import Nav from "./Components/Nav/Nav";
 function App() {
   return (
     <div className="App">
-      <div className='shadow'>
+      <div>
       { location.pathname !== '/' && location.pathname !== '/home' ? <Nav/>: null }
       <Routes>
          <Route path='/' element={<Landing/>}/>  

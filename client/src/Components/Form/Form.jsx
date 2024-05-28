@@ -107,20 +107,20 @@ const Form = () => {
     return (
         <div className={style.contenedor}>
             <div className={style.formContainer}>
-                <p className={style.titulo}>Create your Activity</p>
+                <p className={style.titulo}>Crear Actividad</p>
                 <form onSubmit={handleSubmit}>
                     <div className={style.formField}>
                         <div className={style.unidos}>
-                            <label className={style.label}>Name: </label>
-                            <input className={style.formInputt} onChange={handleChange} type="text" value={input.name} name='name' placeholder="Activity name"/>
+                            <label className={style.label}>Nombre: </label>
+                            <input className={style.formInputt} onChange={handleChange} type="text" value={input.name} name='name' placeholder="Nombre de Actividad"/>
                         </div>
                         {errors.name && <p className={style.formError}>{errors.name}</p>}
                     </div>
 
                     <div className={style.formField}>
-                        <label className={style.label}>Difficulty: </label>
+                        <label className={style.label}>Dificulltad: </label>
                         <select className={style.formInput} onChange={handleChange} name='difficulty' value={input.difficulty}>
-                            <option value="" disabled>Select</option>
+                            <option value="" disabled>Seleccion</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -131,9 +131,9 @@ const Form = () => {
                     </div>
 
                     <div className={style.formField}>
-                        <label className={style.label}>Duration: </label>
+                        <label className={style.label}>Duracion: </label>
                         <select className={style.formInput} onChange={handleChange} name='duration' value={input.duration}>
-                            <option value="" disabled>Select</option>
+                            <option value="" disabled>Seleccionar</option>
                             <option value="1">1 hs</option>
                             <option value="2">2 hs</option>
                             <option value="3">3 hs</option>
@@ -163,19 +163,19 @@ const Form = () => {
                     </div>
 
                     <div className={style.formField}>
-                        <label className={style.label}>Season: </label>
+                        <label className={style.label}>Temporada: </label>
                         <select className={style.formInput} onChange={handleChange} name='season' value={input.season}>
-                            <option value="" disabled>Select</option>
-                            <option value="Summer">Summer</option>
-                            <option value="Autumn">Autumn</option>
-                            <option value="Winter">Winter</option>
-                            <option value="Spring">Spring</option>
+                            <option value="" disabled>Seleccionar</option>
+                            <option value="Summer">Verano</option>
+                            <option value="Autumn">Otoño</option>
+                            <option value="Winter">Invierno</option>
+                            <option value="Spring">Primavera</option>
                         </select>
                         {errors.season && <p className={style.formError}>{errors.season}</p>}
                     </div>
 
                     <div className={style.formField}>
-                        <label className={style.label}>Country: </label>
+                        <label className={style.label}>Pais: </label>
                         <select className={style.formInput} onChange={handleSelectCountries} value={input.countryId} multiple>
                             {countriesorden.map((country) => (
                                 <option key={country.id} value={country.id}>{country.name}</option>
@@ -195,7 +195,7 @@ const Form = () => {
                     </div>
 
                     <div>
-                        <button className={style.reload} type="submit" disabled={input.name === '' || input.difficulty === '' || input.duration === '' || input.season === '' || input.countryId.length < 0 || errors.name || errors.difficulty || errors.duration || errors.season || errors.countryId}>Create</button>
+                        <button className={style.reload} type="submit" disabled={input.name === '' || input.difficulty === '' || input.duration === '' || input.season === '' || input.countryId.length < 0 || errors.name || errors.difficulty || errors.duration || errors.season || errors.countryId}>Crear</button>
                         <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)}/> 
                     </div>
                 </form>
@@ -203,12 +203,12 @@ const Form = () => {
 
             <div className={style.formContainerdel}>
                 <div>
-                <p className={style.titulo}>Delete Activity</p>
+                <p className={style.titulo}>Eliminar Actividad</p>
                 <form onSubmit={handleSubmitDelete}>
                     <div className={style.formField}>
                         <div>
                             <select className={style.formInputdel} onChange={handleSelectDelete} value={delAct}>
-                                <option value="" disabled>Activity</option>
+                                <option value="" disabled>Actividad</option>
                                 {activitiesorden && activitiesorden.map((activity) => {
                                     return (
                                         <option key={activity.name} value={activity.name}>{activity.name}</option>
@@ -218,16 +218,16 @@ const Form = () => {
                         </div>
                     </div>
 
-                    <p className={style.elegidos}>Activity to delete: {delAct}</p>
+                    <p className={style.elegidos}>Actividad a Eliminar: {delAct}</p>
 
                     <div>
-                        <button className={style.reload} type="submit" disabled={delAct === ''}>Delete</button>
+                        <button className={style.reload} type="submit" disabled={delAct === ''}>Eliminar</button>
                         <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)}/> 
                     </div>
                 </form>
                 </div>
                 <div>
-                    <button className={style.reloadd} onClick={reload}>Reset Form</button>
+                    <button className={style.reloadd} onClick={reload}>Reseteo</button>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
   text-align:center;
   display: flex;
   flex-direction: column;
-  background-image: url(https://www.wallart.com/media/catalog/product/cache/871f459736130e239a3f5e6472128962/a/d/adobestock_190060451.jpeg);
+  background-image: url(D:\Developer\PI-Countries\client\src\Components\img\mapamundo.png);
   background-size:cover;
   background-repeat: no-repeat; 
   background-attachment: fixed;
@@ -13,7 +13,7 @@
   
 }
 .shadow{
-  background-color: rgba(0, 0, 0, 0.418);
+  background-color: rgba(3, 7, 248, 0.151);
   background-size:cover;
   min-height: 100vh;
 }
