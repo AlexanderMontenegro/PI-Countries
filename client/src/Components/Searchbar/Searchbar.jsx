@@ -41,11 +41,14 @@ export default function SearchBar(props) {
   return (
     <div className={style.barra}>
       <button className={style.countries} onClick={() => { reload() }}>COUNTRIES</button>
+
       <input className={style.search} type='search' placeholder=' Buscar Pais...' value={name} onChange={(event) => handleChange(event)} />
       <button className={style.buttonsearch} type='submit' disabled={name === ''} onClick={(event) => handleSubmit(event)}>Buscar</button>
       <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)} />
+      
       <button className={style.buttonsearchh} type='submit' onClick={(event) => props.handleFilter(event)}>Reseteo </button>
       <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)} />
+      
       <NavLink className={style.select} to="/">Exit</NavLink>
       <NavLink className={style.select} to="/form">Crear Actividad</NavLink>
       <a

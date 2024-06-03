@@ -18,7 +18,7 @@ const Home = () => {
   const allActivities = useSelector((state) => state.activities);
   
   const [currentPage, setCurrentPage] = useState(1); 
-  const elementsPerPage = 10; 
+  const elementsPerPage = 15; 
 
   const indexOfLastElement = currentPage * elementsPerPage; 
   const indexOfFirstElement = indexOfLastElement - elementsPerPage;
@@ -100,9 +100,9 @@ const Home = () => {
                 <option value='Antarctica'>Antartica</option>
                 <option value='Asia'>Asia</option>
                 <option value='Europe'>Europe</option>
-                <option value='Norte America'>Norte America</option>
+                <option value='North America'>America del Norte</option>
                 <option value='Oceania'>Oceania</option>
-                <option value='Sur America'>Sur America</option>
+                <option value="South America">America del Sur</option>
               </select>
             </div>
 

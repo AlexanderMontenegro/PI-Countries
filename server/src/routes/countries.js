@@ -6,17 +6,21 @@ const router = Router();
 
 router.get('/', async (req, res) => {
   const { name } = req.query;
-  await apiDb();
-  const countries = await infoDb();
-
   try {
+    await apiDb();
+    const countries = await infoDb();
+
     if (!name) {
       return res.status(200).json(countries);
     } else {
       const filteredCountries = countries.filter((country) =>
         country.name.toLowerCase().includes(name.toLowerCase())
       );
-      return res.status(200).json(filteredCountries);
+      if (filteredCountries.length > 0) {
+        return res.status(200).json(filteredCountries);
+      } else {
+        return res.status(404).send('Country not found');
+      }
     }
   } catch (error) {
     console.log(error);
@@ -26,16 +30,13 @@ router.get('/', async (req, res) => {
 
 router.get('/:idPais', async (req, res) => {
   const { idPais } = req.params;
-  const allCountries = await infoDb();
-
   try {
-    if (idPais) {
-      const country = allCountries.find((c) => c.id === idPais);
-      if (country) {
-        return res.status(200).json(country);
-      } else {
-        return res.status(404).send('Country not found');
-      }
+    const country = await infoDb(idPais);
+
+    if (country) {
+      return res.status(200).json(country);
+    } else {
+      return res.status(404).send('Country not found');
     }
   } catch (error) {
     return res.status(400).send(error.message);
