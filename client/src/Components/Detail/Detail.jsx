@@ -5,6 +5,7 @@ import { getCountryDetail } from "../../Redux/Actions/actions";
 import { useEffect } from "react";
 import styles from "./Detail.module.css";
 
+
 const Detail = () => {
   const { id } = useParams();
   const countries = useSelector((state) => state.countryDetail);
@@ -15,6 +16,8 @@ const Detail = () => {
   }, [id]);
 
   return (
+
+    
     <div>
       <div className={styles.containerPage}>
         <div className={styles.containerImage}>
@@ -24,7 +27,10 @@ const Detail = () => {
             src={countries?.flag_img}
             alt={countries?.name}
           />
+          
         </div>
+
+        
 
         <div>
           <div className={styles.containerDetails}>
@@ -58,11 +64,20 @@ const Detail = () => {
                   No hay actividades turísticas añadidas hasta el moment
                 </p>
               )}
+
+              
             </div>
+
+            
           </div>
         </div>
       </div>
     </div>
+
+    
+    
+
+    
   );
 };
 

@@ -10,7 +10,7 @@ const apiDb = async () => {
     id: country.cca3,
     name: country.name.common,
     flag_img: country.flags.png,
-    continent: country.continent || country.region  ,
+    continent: country.region  ,
     capital: country.capital ? country.capital[0] : 'N/A',
     subregion: country.subregion,
     area: country.area,

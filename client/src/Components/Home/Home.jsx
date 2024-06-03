@@ -97,12 +97,12 @@ const Home = () => {
               <select className={style.select} onChange={handleFilterContinent}>
                 <option value='All'>Todos los continentes</option>
                 <option value='Africa'>Africa</option>
-                <option value='Antarctica'>Antartica</option>
+                <option value='Antarctic'>Antartica</option>
                 <option value='Asia'>Asia</option>
                 <option value='Europe'>Europe</option>
-                <option value='North America'>America del Norte</option>
+                <option value='Americas'>Americas</option>
                 <option value='Oceania'>Oceania</option>
-                <option value='South America'>America del Sur</option>
+                
               </select>
             </div>
 
