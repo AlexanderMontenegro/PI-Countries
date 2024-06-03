@@ -196,9 +196,17 @@
     transition: 0.5s;
     font-size: 4vh;
     font-weight: bold;
+    margin: 10px;
+    columns: 2;
 }
 
 .reloadd:hover{
     background-color: black;
     color: white;
 } 
+
+.acceso{
+  margin-top: 100px;
+  padding: 50px;
+  
+}

@@ -28,34 +28,34 @@ const Detail = () => {
 
         <div>
           <div className={styles.containerDetails}>
-            <h1 className={styles.title}>Country Data</h1>
-            <h3 className={styles.text}>Continent: {countries?.continent} </h3>
+            <h1 className={styles.title}>Datos del Pais</h1>
+            <h3 className={styles.text}>Continente: {countries?.continent} </h3>
             <h3 className={styles.text}>Capital: {countries?.capital}</h3>
             <h3 className={styles.text}>Subregion: {countries?.subregion}</h3>
             <h3 className={styles.text}>Area: {countries?.area} km²</h3>
-            <h3 className={styles.text}>Population: {countries?.population}</h3>
+            <h3 className={styles.text}>Poblacion: {countries?.population}</h3>
           </div>
 
           <div className={styles.containerDetails}>
-            <h1 className={styles.title}>Tourist Activities</h1>
+            <h1 className={styles.title}>Actividad Turistica</h1>
 
             <div className={styles.actividades}>
               {countries?.Activities?.length > 0 ? (
                 countries?.Activities?.map((activity) => (
-                  <div className={styles.actcontainer}>
+                  <div key={activity.id} className={styles.actcontainer}>
                     <h3 className={styles.textsub}>{activity.name}</h3>
                     <h5 className={styles.text}>
-                      Dificulty: {activity.difficulty}
+                      Dificultad: {activity.difficulty}
                     </h5>
                     <h5 className={styles.text}>
-                      Duration: {activity.duration} hs
+                      Duracion: {activity.duration} hs
                     </h5>
-                    <h5 className={styles.text}>Season: {activity.season}</h5>
+                    <h5 className={styles.text}>Temporada: {activity.season}</h5>
                   </div>
                 ))
               ) : (
                 <p className={styles.divLoading}>
-                  No Tourist Activities added so far
+                  No hay actividades turísticas añadidas hasta el moment
                 </p>
               )}
             </div>

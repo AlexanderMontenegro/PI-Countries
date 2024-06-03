@@ -10,7 +10,7 @@
     margin-left: 5px;
     margin-right: 5px;
     font-weight: bold;
-    font-size: 2.5vh;
+    font-size: 2vh;
     cursor: pointer;
 }
 
@@ -28,7 +28,7 @@
     
     font-family:"Consolas";
     margin-bottom: 0px;
-    color: white;
+    color: rgb(241, 4, 4);
     font-weight: bold;
     margin-bottom: 0px;
     font-size: 2.5vh;

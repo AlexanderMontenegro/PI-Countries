@@ -18,7 +18,7 @@ const Home = () => {
   const allActivities = useSelector((state) => state.activities);
   
   const [currentPage, setCurrentPage] = useState(1); 
-  const elementsPerPage = 15; 
+  const elementsPerPage = 8; 
 
   const indexOfLastElement = currentPage * elementsPerPage; 
   const indexOfFirstElement = indexOfLastElement - elementsPerPage;
@@ -102,7 +102,7 @@ const Home = () => {
                 <option value='Europe'>Europe</option>
                 <option value='North America'>America del Norte</option>
                 <option value='Oceania'>Oceania</option>
-                <option value="South America">America del Sur</option>
+                <option value='South America'>America del Sur</option>
               </select>
             </div>
 
@@ -127,7 +127,7 @@ const Home = () => {
 
           <div className={style.orderContainer}>
             <h1 className={style.title}>Ordenar</h1>
-            <h3 className={style.subtitle}>Nombre/Popularidad</h3>
+            <h3 className={style.subtitle}>Segun</h3>
             <select className={style.select} onChange={handleOrderByName} value={orderBy}>
               <option value="" disabled >Ordenar por...</option>
               <option value='ascName'>Nombres A - Z</option>

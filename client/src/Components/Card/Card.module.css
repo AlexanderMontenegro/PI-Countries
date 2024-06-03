@@ -1,5 +1,5 @@
 .divCard {
-    border-radius: 15px;
+    border-radius: 50px;
     height:33vh;
     width:14vw;
     margin-left: 0px;
@@ -31,6 +31,9 @@
     margin-top: 4vh; 
     padding: 2%;
   }
+ 
+  
+
   
   .divImg {
     display: flex;
@@ -45,10 +48,17 @@
     margin-right: auto;
     display: flex;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 50px;
     height: 15vh;
     width: 10vw;
     align-self: center; 
+  }
+
+  .imgCard:hover {
+ 
+    height:15vh;
+    width:15vw;
+ 
   }
   
   .title {
@@ -56,8 +66,12 @@
     margin-bottom: 0.3vh;
     font-size: 2.5vh;
   }
+
+
   
   .subtitle {
     margin-top: 0.3vh; 
-    font-size: 1.7vh;
+    font-size: 1.5vh;
   }
+
+ 

@@ -50,7 +50,7 @@ export default function SearchBar(props) {
       <audio ref={audioRef} src={soundFile} onEnded={() => setIsPlaying(false)} />
       
       <NavLink className={style.select} to="/">Exit</NavLink>
-      <NavLink className={style.select} to="/form">Crear Actividad</NavLink>
+      <NavLink className={style.select} to="/form">Actividades</NavLink>
       <a
         href="https://www.linkedin.com/in/alexander-montenegro/"
         target="_blank"
