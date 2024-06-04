@@ -46,6 +46,30 @@
     font-family:"Consolas";
     color: rgba(255, 0, 0, 0.63);
   }
+
+  .formFieldP {
+    align-items: center;
+    text-align: center;
+    height: 15vh;
+    font-family:"Consolas";
+    color: rgba(255, 0, 0, 0.63);
+    
+  }
+
+
+  
+  .labelP{
+    padding: 1.2vh;
+    width: 20vw;
+    font-family:"Consolas";
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(0, 0, 0, 0.384);
+    text-align: center;
+    position: relative;
+    border: 0.1vh solid black;
+    display: inline-block;
+    font-size: 3vh;
+  }
   
   .formInput {
     width: 15vw;
@@ -61,6 +85,7 @@
     font-size: 3vh;
     text-align: center;
     color: rgb(114, 114, 114);
+    overflow: none;
   }
 
   .formInputdel {
@@ -111,6 +136,8 @@
   .formInput:hover{
     background-color: white;
     color: black
+    
+
   }
 
   .formInputt:hover{
@@ -209,4 +236,30 @@
   margin-top: 100px;
   padding: 50px;
   
+}
+
+.formInputP {
+  width: 20vw;
+  height: 6.3vh;
+  position: relative;
+  padding: 0px;
+  border: 0px;
+  font-family:"Consolas";
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgb(53, 52, 52);
+  transition: 0.3s;
+  border: 0.1vh solid black;
+  font-size: 3vh;
+  text-align: center;
+  color: rgb(114, 114, 114);
+  overflow-y: hidden;
+}
+
+.formInputP:hover{
+  background-color: white;
+  color: black;
+  width: 20vw;
+  height: 30vh;
+  border-radius: 10px 10px 10px 10px;
+  overflow-y: scroll;
 }

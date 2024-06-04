@@ -5,16 +5,20 @@ const postActivity = async (name, difficulty, duration, season, countryIds) => {
     throw new Error('Missing required fields');
   }
 
-  const newActivity = await Activity.create({ name, difficulty, duration, season });
+  try {
+    const newActivity = await Activity.create({ name, difficulty, duration, season });
 
-  const countries = await Country.findAll({
-    where: {
-      id: countryIds,
-    },
-  });
+    const countries = await Country.findAll({
+      where: {
+        id: countryIds,
+      },
+    });
 
-  await newActivity.addCountries(countries);
-  return newActivity;
+    await newActivity.addCountries(countries);
+    return newActivity;
+  } catch (error) {
+    throw new Error('Error creating activity'); 
+    }
 };
 
 module.exports = postActivity;

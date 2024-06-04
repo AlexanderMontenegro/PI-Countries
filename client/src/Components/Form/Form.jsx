@@ -231,20 +231,23 @@ const Form = () => {
             )}
           </div>
 
-          <div className={style.formField}>
-            <label className={style.label}>Pais: </label>
+          <div className={style.formFieldP}>
+            <label className={style.labelP}>Pais: </label>
+            
             <select
-              className={style.formInput}
+              className={style.formInputP}
               onChange={handleSelectCountries}
               value={input.countryId}
               multiple
             >
+              
               {countriesorden.map((country) => (
                 <option key={country.id} value={country.id}>
                   {country.name}
                 </option>
               ))}
             </select>
+
             {errors.countryId && (
               <p className={style.formError}>{errors.countryId}</p>
             )}
