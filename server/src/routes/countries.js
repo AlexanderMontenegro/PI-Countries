@@ -1,8 +1,7 @@
 const { Router } = require('express');
+const router = Router();
 const apiDb = require('../controllers/apiDb');
 const infoDb = require('../controllers/infoDb');
-
-const router = Router();
 
 router.get('/', async (req, res) => {
   const { name } = req.query;
@@ -44,3 +43,5 @@ router.get('/:idPais', async (req, res) => {
 });
 
 
+
+module.exports = router;

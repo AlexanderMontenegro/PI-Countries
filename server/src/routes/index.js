@@ -1,6 +1,4 @@
 const { Router } = require("express");
-
-
 const router = Router();
 const countries = require("./countries")
 const activities = require("./activities")

@@ -1,9 +1,9 @@
 const { Router } = require("express");
+const router = Router();
 const postActivity = require("../controllers/postActivity")
 const deleteActivity = require("../controllers/deleteActivity")
 const { Activity, Country } = require("../db");
 
-const router = Router();
 
 router.post('/', async (req, res) => {
     const { name, difficulty, duration, season, countryIds } = req.body;

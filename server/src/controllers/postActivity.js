@@ -1,3 +1,4 @@
+
 const { Activity, Country } = require('../db');
 
 const postActivity = async (name, difficulty, duration, season, countryIds) => {
@@ -22,3 +23,4 @@ const postActivity = async (name, difficulty, duration, season, countryIds) => {
 };
 
 module.exports = postActivity;
+

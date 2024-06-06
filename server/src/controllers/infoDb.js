@@ -1,3 +1,4 @@
+
 const { Country, Activity } = require('../db');
 
 const infoDb = async (idPais) => {

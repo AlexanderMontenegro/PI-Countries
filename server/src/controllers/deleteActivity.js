@@ -1,3 +1,4 @@
+
 const { Activity } = require('../db');
 
 const deleteActivity = async (name) => {
