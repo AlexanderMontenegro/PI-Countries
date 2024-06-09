@@ -95,6 +95,7 @@ const Form = () => {
     setDelAct(event.target.value);
   };
 
+
   const handleSubmitDelete = (event) => {
     handleButtonClick();
     event.preventDefault();
@@ -106,6 +107,11 @@ const Form = () => {
       reload();
     }
   };
+
+  
+
+
+
 
   useEffect(() => {
     dispatch(getCountries());

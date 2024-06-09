@@ -4,7 +4,6 @@ const postActivity = require("../controllers/postActivity")
 const deleteActivity = require("../controllers/deleteActivity")
 const { Activity, Country } = require("../db");
 
-
 router.post('/', async (req, res) => {
     const { name, difficulty, duration, season, countryIds } = req.body;
     try {
@@ -14,6 +13,7 @@ router.post('/', async (req, res) => {
         return res.status(400).json({error: error.message});
     }
 });
+
 
 router.get('/', async (req, res) => {
   try {
@@ -25,6 +25,9 @@ router.get('/', async (req, res) => {
     return res.status(400).json({error: error.message});
   }
 });
+
+
+
 
 router.delete('/', async (req, res) => {
     const { name } = req.query;
@@ -39,5 +42,9 @@ router.delete('/', async (req, res) => {
       return res.status(500).json({ error: 'Error deleting activity' });
     }
 });
+
+
+
+
 
 module.exports = router;
