@@ -95,24 +95,16 @@ const Form = () => {
     setDelAct(event.target.value);
   };
 
-
   const handleSubmitDelete = (event) => {
-    handleButtonClick();
     event.preventDefault();
-    if (delAct.length <= 0) alert("You must select an activity to delete");
-    else {
+    if (window.confirm("¿Estás seguro de que quieres eliminar esta actividad?")) {
       dispatch(deleteActivities(delAct));
       alert("Activity Deleted!");
       setDelAct("");
       reload();
     }
   };
-
   
-
-
-
-
   useEffect(() => {
     dispatch(getCountries());
   }, [dispatch]);
