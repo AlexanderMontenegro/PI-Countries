@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
         const newActivity = await postActivity(name, difficulty, duration, season, countryIds);
         return res.status(201).json(newActivity); 
     } catch (error) {
+      console.error('Error in POST /activities:', error.message);/**/ 
         return res.status(400).json({error: error.message});
     }
 });
@@ -22,6 +23,7 @@ router.get('/', async (req, res) => {
     });
     res.status(200).json(activities);
   } catch (error) {
+    console.error('Error in GET /activities:', error.message);/**/ 
     return res.status(400).json({error: error.message});
   }
 });
@@ -39,6 +41,7 @@ router.delete('/', async (req, res) => {
         return res.status(404).json({ error: 'Activity not found' });
       }
     } catch (error) {
+      console.error('Error in DELETE /activities:', error.message);/* */
       return res.status(500).json({ error: 'Error deleting activity' });
     }
 });

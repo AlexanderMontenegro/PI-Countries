@@ -10,7 +10,7 @@ conn.authenticate()
     console.error('No se pudo conectar a la base de datos:', err);
   });
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ alter: true }).then(() => {
   server.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   });

@@ -6,6 +6,8 @@ const activities = require("./activities")
 router.use("/countries", countries);
 router.use("/activities", activities);
 
-
+router.use((req, res) => {
+    res.status(404).send("Not Found");
+  });
 
 module.exports = router;
