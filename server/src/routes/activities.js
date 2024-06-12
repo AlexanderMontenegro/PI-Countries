@@ -11,7 +11,7 @@ const validSeasons = ['Spring', 'Summer', 'Autumn', 'Winter'];
 
 router.post('/', async (req, res) => {
     const { name, difficulty, duration, season, countryIds } = req.body;
-    // Verificación de temporada válida
+   
     if (!validSeasons.includes(season)) {
       return res.status(400).json({ error: `La temporada "${season}" no es válida` });
     }
