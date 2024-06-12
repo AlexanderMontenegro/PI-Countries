@@ -2,14 +2,12 @@
 const { Activity } = require('../db');
 
 const deleteActivity = async (name) => {
-  const activity = await Activity.findOne({ where: { name } });
-
-  if (!activity) {
+    const activity = await Activity.findOne({ where: { name } });
+    if (activity) {
+        await activity.destroy();
+        return true;
+    }
     return false;
-  }
-
-  await activity.destroy();
-  return true;
 };
 
 module.exports = deleteActivity;

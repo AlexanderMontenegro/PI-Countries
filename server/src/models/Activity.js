@@ -25,8 +25,8 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT,
     },
     season: {
-      type: DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
-    },
+      type: DataTypes.ENUM('Spring', 'Summer', 'Autumn', 'Winter'), 
+        },
   }, {
     timestamps: false,
   });

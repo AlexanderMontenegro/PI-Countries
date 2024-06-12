@@ -2,25 +2,26 @@
 const { Activity, Country } = require('../db');
 
 const postActivity = async (name, difficulty, duration, season, countryIds) => {
-  if (!name || !difficulty || !countryIds || countryIds.length === 0) {
-    throw new Error('Missing required fields');
-  }
+    try {
+     
+        const newActivity = await Activity.create({ name, difficulty, duration, season });
+        console.log('Actividad creada:', newActivity.toJSON());
 
-  try {
-    const newActivity = await Activity.create({ name, difficulty, duration, season });
+        
+        if (countryIds && countryIds.length > 0) {
+            const countries = await Country.findAll({ where: { id: countryIds } });
+            console.log('Países encontrados:', countries.map(country => country.toJSON()));
+            
+      
+            await newActivity.addCountries(countries);
+            console.log('Actividad asociada con países:', countries.map(country => country.toJSON()));
+        }
 
-    const countries = await Country.findAll({
-      where: {
-        id: countryIds,
-      },
-    });
-
-    await newActivity.addCountries(countries);
-    return newActivity;
-  } catch (error) {
-    throw new Error('Error creating activity'); 
+        return newActivity;
+    } catch (error) {
+        console.error('Error creando actividad:', error);
+        throw new Error('Error creating activity');
     }
 };
 
 module.exports = postActivity;
-
