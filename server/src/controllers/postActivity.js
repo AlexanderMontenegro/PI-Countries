@@ -1,4 +1,3 @@
-
 const { Activity, Country } = require('../db');
 
 const postActivity = async (name, difficulty, duration, season, countryIds) => {
