@@ -63,8 +63,8 @@ const Form = () => {
     );
   };
 
+
   const handleSubmit = (event) => {
-    handleButtonClick();
     event.preventDefault();
     const errorSave = validate(input);
     const existName = theActivities.find(
@@ -76,8 +76,11 @@ const Form = () => {
     else if (Object.values(errorSave).length !== 0)
       alert("You must fulfill all the required conditions");
     else {
-      dispatch(createActivity(input));
-      alert("Activity Created!");
+      dispatch(createActivity({
+        ...input,
+        countryIds: input.countryId, 
+      }));
+      alert  ( "Creaste una nueva actividad!");
       setInput({
         name: "",
         difficulty: "",
@@ -89,22 +92,26 @@ const Form = () => {
     }
   };
 
+
   const [delAct, setDelAct] = useState("");
 
   const handleSelectDelete = (event) => {
     setDelAct(event.target.value);
   };
 
+
   const handleSubmitDelete = (event) => {
     event.preventDefault();
     if (window.confirm("¿Estás seguro de que quieres eliminar esta actividad?")) {
-      dispatch(deleteActivities(delAct));
-      alert("Activity Deleted!");
+      dispatch(deleteActivities(delAct)); 
+      alert("Actividad Eliminada!");
       setDelAct("");
       reload();
     }
   };
   
+
+
   useEffect(() => {
     dispatch(getCountries());
   }, [dispatch]);

@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
         const newActivity = await postActivity(name, difficulty, duration, season, countryIds);
         return res.status(201).json(newActivity);
     } catch (error) {
-        console.error('Error in POST /activities:', error.message);
+        
         return res.status(400).json({ error: error.message });
     }
 });
@@ -32,29 +32,31 @@ router.get('/', async (req, res) => {
         });
         res.status(200).json(activities);
     } catch (error) {
-        console.error('Error in GET /activities:', error.message);
+       
         return res.status(400).json({ error: error.message });
     }
 });
 
 
+
 router.delete('/:name', async (req, res) => {
-  const { name } = req.params;
-  if (!name) {
-      return res.status(400).json({ error: 'El parámetro "name" es requerido' });
-  }
-  try {
-      const isDeleted = await deleteActivity(name);
-      if (isDeleted) {
-          return res.status(200).json({ message: 'Actividad eliminada' });
-      } else {
-          return res.status(404).json({ error: 'Actividad no encontrada' });
-      }
-  } catch (error) {
-      console.error('Error en DELETE /activities:', error.message);
-      return res.status(500).json({ error: 'Error eliminando la actividad' });
-  }
-});
+    const { name } = req.params;
+    if (!name) {
+        return res.status(400).json({ error: 'El parámetro "name" es requerido' });
+    }
+    try {
+        const isDeleted = await deleteActivity(name);
+        if (isDeleted) {
+            return res.status(200).json({ message: 'Actividad eliminada' });
+        } else {
+            return res.status(404).json({ error: 'Actividad no encontrada' });
+        }
+    } catch (error) {
+      
+        return res.status(500).json({ error: 'Error eliminando la actividad' });
+    }
+  });
+  
 
 
 module.exports = router;

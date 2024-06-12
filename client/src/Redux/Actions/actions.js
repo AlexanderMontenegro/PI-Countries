@@ -33,14 +33,22 @@ export const getActivities = () => async (dispatch) => {
     return dispatch({ type: GET_ACTIVITIES, payload: data });
 };
 
-export const deleteActivities = (name) => async (dispatch) => {
-    try {
-        const { data } = await axios.delete(`/activities?name=${name}`);
-        return dispatch({ type: DELETE_ACTIVITIES, payload: data });
-    } catch (error) {
-        console.error('Error in deleteActivities:', error.response.data);
-    }
-};
+
+
+export const deleteActivities = (name) => {
+    return async (dispatch) => {
+      try {
+        const response = await fetch(`http://localhost:3001/activities/${name}`, {
+          method: "DELETE",
+        });
+        const data = await response.json();
+        dispatch({ type: "DELETE_ACTIVITY", payload: name });
+      } catch (error) {
+        console.error("Error deleting activity:", error);
+      }
+    };
+  };
+  
 
 export const searchCountry = (name) => async (dispatch) => {
     try {
