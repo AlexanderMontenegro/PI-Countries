@@ -78,7 +78,7 @@ const Form = () => {
     else {
       dispatch(createActivity({
         ...input,
-        countryIds: input.countryId, 
+        countryIds: input.countryId, /* */
       }));
       alert  ( "Creaste una nueva actividad!");
       setInput({
@@ -99,11 +99,11 @@ const Form = () => {
     setDelAct(event.target.value);
   };
 
-
+/* */
   const handleSubmitDelete = (event) => {
     event.preventDefault();
     if (window.confirm("¿Estás seguro de que quieres eliminar esta actividad?")) {
-      dispatch(deleteActivities(delAct)); 
+      dispatch(deleteActivities(delAct)); //
       alert("Actividad Eliminada!");
       setDelAct("");
       reload();
