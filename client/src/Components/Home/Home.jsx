@@ -3,7 +3,8 @@ import style from "./Home.module.css"
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState, useRef } from "react";
 import { getCountries, getActivities, countryFilter, ordeByName } from "../../Redux/Actions/actions";
-import SearchBar from "../SearchBar/SearchBar";
+import SearchBar from '../SearchBar/SearchBar';
+
 import Paginado from '../Paginado/Paginado';
 /*import soundFile from "../audio/search.mp3"*/
 
